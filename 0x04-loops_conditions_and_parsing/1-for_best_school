@@ -1,0 +1,12 @@
+!/bin/bash
+
+n=0
+s="Best School"
+
+
+while [ $n -le 9 ]
+do
+    echo $s
+    n=$(($n +1 ))
+    sleep 0.5
+done
