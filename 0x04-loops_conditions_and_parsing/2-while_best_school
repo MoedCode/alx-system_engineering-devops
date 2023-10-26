@@ -1,0 +1,11 @@
+#!/bin/env bash
+#using wile loop
+
+i=0
+str="Best School"
+# lt les than
+while [ $i -lt 10 ]
+do
+    echo $str
+    i=$((i+1))
+done
