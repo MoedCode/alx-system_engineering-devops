@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# n=0
+# s="HI"
+# s='H\nI'
+
+# while [ $n -le 10 ]
+# do
+#     echo $s
+#     n=$(($n +3 ))
+#     sleep 0.5
+# done
+
+## chcking on existance of file
+cond=1
+while [ -f ./testfile ]
+do
+	echo "file test is exist."
+done
+	echo "The file no longer exists. Exiting"
