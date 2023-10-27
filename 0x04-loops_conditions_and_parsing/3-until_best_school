@@ -6,7 +6,7 @@ str="Best School"
 until [ $i -gt 9 ]
 do
     echo $str
-    i=$((i+1))
+    i=$(( i+1 ))
 done
 
 
