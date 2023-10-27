@@ -2,7 +2,6 @@
 #using while loop
 i=0
 str="Best School"
-
 until [ $i -gt 9 ]
 do
     echo $str
