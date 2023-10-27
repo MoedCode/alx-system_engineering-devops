@@ -1,8 +1,12 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #using while loop
-i=1
-until [ $i -gt 10 ]
+i=0
+str="Best School"
+
+until [ $i -gt 9 ]
 do
-    echo "Best School"
-    i=$(( i+1 ))
+    echo $str
+    i=$((i+1))
 done
+
+
