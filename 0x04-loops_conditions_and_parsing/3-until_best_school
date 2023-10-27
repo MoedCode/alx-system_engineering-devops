@@ -4,7 +4,7 @@ i=0
 str="Best School"
 until [ $i -gt 9 ]
 do
-    echo $str
+    echo "$str"
     i=$(( i+1 ))
 done
 
