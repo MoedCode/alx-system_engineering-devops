@@ -1,0 +1,26 @@
+Diagram Image Link:
+https://imgur.com/m4wXjrK
+
+Revised Answers:
+
+A server is a computer equipped with its own hard disk, CPU, and RAM. What distinguishes a server from a personal computer is its role in providing services to other computers. It may serve various purposes such as file storage, email services, or website connectivity. Servers can be specialized to offer a single service or provide a combination of services.
+
+A domain name is a text-based identifier for a webpage, utilized by the Domain Name System (DNS) to associate it with a corresponding IP address.
+
+In the case of www.foobar.com, "foobar.com" is the domain name, and "www" is a subdomain. "www" functions as a CNAME record, pointing to foobar.com, which is then resolved by DNS to find its IP address.
+
+The hardware form of a web server stores HTML, Java, CSS, and image files, as well as web server software. Web server software manages how websites are accessed, utilizing an HTTP server that comprehends URLs and HTTP requests to deliver static webpages.
+
+The Application Server handles business logic, transforming data to provide specialized functions and enhance user interaction. Positioned between the web server and database, it streamlines complex interactions, stores previous interactions, and improves overall performance.
+
+A database organizes information in a structured manner for easy access, updating, and utilization.
+
+The server employs an IP address to communicate with the client using protocols such as TCP/IP and HTTP.
+
+Issues with the Infrastructure:
+
+Single Point of Failure (SPOF) exists, whether it's in the client software, hardware, network connection, or a single server. Malfunctions in server hardware, software, or data center issues can lead to system failure.
+
+Downtime is required for updates, causing the entire system to be shut down. During this period, users cannot access services because there is no backup server.
+
+The infrastructure relies on a single server, making it susceptible to overload from incoming heavy traffic, potentially causing server crashes. Lack of scalability is evident due to the absence of additional servers.

@@ -1,0 +1,24 @@
+Diagram Iimage Link:
+https://imgur.com/xnP8AwG
+
+Revised Answer:
+
+1. We introduced firewalls to manage and enhance security, controlling traffic effectively. Additionally, monitoring tools were implemented to observe both our application and server, promoting improved performance and efficient data collection.
+
+2. Firewalls, whether in software or hardware form, serve to prevent unauthorized access to a network. They scrutinize incoming and outgoing data based on predefined rules, allowing entry only if the data aligns with these rules.
+
+3. HTTPS, a secure variant of HTTP, employs data encryption for secure data transfer. Upon an HTTPS request, the server sends a public key with an SSL certificate. The client engages in an SSL handshake, presenting credentials matching the SSL certificate, enabling data decryption on the client's machine.
+
+4. Monitoring tools gather data regarding the performance of both applications and servers. This data highlights any anomalies affecting performance, aiding in targeted issue resolution. Analyzing this information simplifies the troubleshooting process by guiding attention to specific problem areas.
+
+5. Continuous data collection during the operation of an application or server includes metrics related to performance, availability, and user experiences. This data is then transformed into a readable format, allowing immediate detection and resolution of glitches.
+
+6. Initial setup involves deploying monitoring tools capable of tracking metrics, such as queries per second. This monitoring assesses the system's ability to handle and scale with incoming traffic.
+
+Issues with the Infrastructure:
+
+1. SSL termination, if applied, could compromise sensitive data during transactions, as transactions should ideally occur in a secure connection.
+
+2. Any alterations made by the master will be replicated on the slave, posing a risk of data loss.
+
+3. The infrastructure's vulnerability lies in the fact that a failure in a single server would impact all associated components.

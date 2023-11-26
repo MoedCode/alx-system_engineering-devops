@@ -1,0 +1,20 @@
+DiagramIimage Link
+https://imgur.com/ct7bXEq
+
+Revised Answers:
+
+1. Now, two servers are in place, each equipped with its own web server, application server, codebase, and database. This configuration proves beneficial in handling high traffic volumes and mitigating the impact of failures in one of the servers. Additionally, a High Availability (HA) proxy load balancer is implemented to evenly distribute traffic between the two servers.
+
+2. The load balancing strategy can be either Weighted Round Robin, where servers are assigned weights, and the one with a higher weight receives more frequent requests, or Weighted Least Connection, where requests are directed to the server with the fewest active connections.
+
+3. The system employs an Active-Active setup, meaning that if one server fails, requests are not routed to it until it successfully passes a health check. During this time, the other server continues to handle the functions. Alternatively, it can utilize an Active-Passive configuration, where in the event of a failure in the active server, the passive server swiftly takes over until the active one recovers.
+
+4/5. In the setup, the Primary Replica serves as the primary source server (node) authorized for hosting the read/write availability database. The Secondary Replica maintains a full backup copy of the primary server and hosts the read-only availability database. Whether in Synchronized or Asynchronized mode, during a failover, the secondary replica assumes the primary role with or without a guarantee of data protection. When the primary replica becomes available, it reassumes the role of the secondary replica.
+
+Issues with the Infrastructure:
+
+1. The Single Point of Failure (SPOF) persists, particularly when relying on a single client over the network. Additionally, potential issues arise if both servers share the same data center and power source.
+
+2. Security concerns persist as the system uses HTTP, which does not encrypt data during transfer. The absence of a firewall means incoming traffic has unrestricted access to the data.
+
+3. Lack of monitoring poses challenges. The system lacks visibility into whether the website is online, performing efficiently, encountering errors, or effectively handling incoming requests.
