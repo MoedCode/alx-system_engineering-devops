@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-ssh fbadf133f637@fbadf133f637.046c7968.alx-cod.online
+ssh ~/.ssh/school
