@@ -1,4 +1,4 @@
-# make  configuration file 100-puppet_ssh_config.pp
+# Contents of 100-puppet_ssh_config.pp
 
 # Turn off password authentication
 file_line { 'Turn off passwd auth':
