@@ -12,6 +12,7 @@ docker exec -ti CONTAINER_ID /bin/bash
 
 # Investigate and fix Apache configuration if needed
 # Restart Apache service
+
 service apache2 restart
 
 # Exit container Bash
