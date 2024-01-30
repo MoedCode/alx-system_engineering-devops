@@ -6,15 +6,15 @@ if __name__ == "__main__":
     import sys
     import csv
 
-    EMPID = int(sys.argv[1])
-    USER = f"https://jsonplaceholder.typicode.com/users/{EMPID}"
-    TODO = f"https://jsonplaceholder.typicode.com/users/{EMPID}/todos"
+    ID = int(sys.argv[1])
+    Em_url = f"https://jsonplaceholder.typicode.com/users/{ID}"
+    TODO = f"https://jsonplaceholder.typicode.com/users/{ID}/todos"
 
-    ureq = requests.get(USER).json()
+    REQ = requests.get(Em_url).json()
     treq = requests.get(TODO).json()
-    name = ureq['username']
-    with open(f'{EMPID}.csv', 'w', newline='') as file:
+    name = REQ['username']
+    with open(f'{ID}.csv', 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_NONNUMERIC)
         for x in treq:
-            writer.writerow([str(EMPID), f"{name}",
+            writer.writerow([str(ID), f"{name}",
                             f"{x['completed']}", f"{x['title']}"])
