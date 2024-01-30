@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-"""Exports to-do list information for a given employee ID to JSON format."""
-import json
-import requests
-import sys
+"""returns information about his/her CSV file. """
 
 if __name__ == "__main__":
-    user_id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(user_id)).json()
-    username = user.get("username")
-    todos = requests.get(url + "todos", params={"userId": user_id}).json()
+    import requests
+    import sys
+    import csv
 
-    with open("{}.json".format(user_id), "w") as jsonfile:
-        json.dump({user_id: [{
-            "task": t.get("title"),
-            "completed": t.get("completed"),
-            "username": username
-        } for t in todos]}, jsonfile)
+    EMPID = int(sys.argv[1])
+    USER = f"https://jsonplaceholder.typicode.com/users/{EMPID}"
+    TODO = f"https://jsonplaceholder.typicode.com/users/{EMPID}/todos"
+
+    ureq = requests.get(USER).json()
+    treq = requests.get(TODO).json()
+    name = ureq['username']
+    with open(f'{EMPID}.csv', 'w', newline='') as file:
+        writer = csv.writer(file, quoting=csv.QUOTE_NONNUMERIC)
+        for x in treq:
+            writer.writerow([str(EMPID), f"{name}",
+                            f"{x['completed']}", f"{x['title']}"])
