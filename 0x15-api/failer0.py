@@ -8,9 +8,8 @@ if __name__ == "__main__":
     emp_ID = argv[1]
     emp_url = f"{URL}users/{emp_ID}"
 
-
     emp_json = requests.get(emp_url).json()
-    TODO_json = requests.get(URL + "todos", params={"UserId":emp_ID}).json()
+    TODO_json = requests.get(URL + "todos", params={"UserId": emp_ID}).json()
 
     DONE = [t.get("title") for t in TODO_json if t.get("completed") is True]
     NAME = emp_json.get("name")

@@ -3,11 +3,10 @@
 
 if __name__ == "__main__":
     import requests
-    from  sys import argv
-
+    from sys import argv
 
     URL = "https://jsonplaceholder.typicode.com/"
-    ID =  argv[1]
+    ID = argv[1]
     Employee = requests.get(URL + f"users/{ID}").json()
     NAME = Employee.get("name")
 
