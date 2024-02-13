@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 import requests
 
-def number_of_subscribers(subreddit):
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'your_user_agent'}  # Add a custom User-Agent to avoid Too Many Requests errors
 
-    response = requests.get(url, headers=headers)
+def number_of_subscribers(subreddit):
+    """ tasks reddit user name and return the subscribers number """
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+
+    Hdrs =  {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=Hdrs,  allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
@@ -13,10 +15,4 @@ def number_of_subscribers(subreddit):
     else:
         return 0
 
-if __name__ == '__main__':
-    import sys
 
-    if len(sys.argv) < 2:
-        print("Please pass an argument for the subreddit to search.")
-    else:
-        print("{:d}".format(number_of_subscribers(sys.argv[1])))
