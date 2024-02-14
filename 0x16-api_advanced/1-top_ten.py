@@ -2,15 +2,23 @@
 import requests
 
 
-def number_of_subscribers(subreddit):
-    """ tasks reddit user name and return the subscribers number """
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+def top_ten(subreddit):
+    """Tasks Reddit user name and returns the subscribers number."""
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
 
-    Hdrs = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=Hdrs,  allow_redirects=False)
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
-        data = response.json()
-        return data['data']['subscribers']
+        data = response.json().get('data', {}).get('children', [])
+        if data:
+            for post in data:
+                print(post['data']['title'])
+        else:
+            print("No posts found for the given subreddit.")
     else:
-        return 0
+        print("None")
+
+
+if __name__ == '__main__':
+    top_ten(sys.argv[1] if len(sys.argv) > 1 else '')
