@@ -24,3 +24,5 @@ def top_ten(subreddit):
 
     for _ in data:
         print(_['data']['title'])
+
+
