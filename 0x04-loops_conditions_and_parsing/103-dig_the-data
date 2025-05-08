@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#using for loop
+
+file_name="apache-access.log"
+awk '{print $1, $9}' "$file_name" | sort | uniq -c | sort -nr 

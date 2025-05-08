@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo 'Enter your file name' 
+read file 
+echo '#!/usr/bin/env bash' > ${file}
+vi ${file}
+chmod +x ${file}

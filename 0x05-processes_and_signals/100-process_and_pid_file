@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Creates the file /var/run/myscript.pid containing its PID
+
+File_script="/var/run/myscript.pid"
+
+delete(){
+    rm "$File_script"
+    exit 0
+}
+echo "$$" > "$File_script"
+
+
+trap "echo 'I hate the kill command' && delete" SIGTERM
+trap "echo 'Y U no love me?!'" SIGINT
+trap "delete" SIGQUIT
+
+while true; do
+echo "To infinity and beyond"
+sleep 2
+done
+

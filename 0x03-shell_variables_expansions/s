@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo 'Enter your file name' 
+read file 
+echo '#!/bin/bash' > ${file}
+vi ${file}
+chmod +x ${file}
